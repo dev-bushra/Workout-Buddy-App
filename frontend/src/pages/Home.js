@@ -9,8 +9,11 @@ const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext()
 
   useEffect(() => {
+
+    // fetch workouts
     const fetchWorkouts = async () => {
-      const response = await fetch('/api/workouts')
+      const response = await fetch('/api/workout')
+      console.log('response:', response);
       const json = await response.json()
 
       if (response.ok) {
